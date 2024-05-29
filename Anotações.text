@@ -1,0 +1,20 @@
+ISSO SERÁ USADO COM ANOTAÇÕES DE TODOS
+
+O site está na porta 3000, usando o "npm start" no console
+
+é importante saber localizar tudo e não perder 3 horas por causa de um "." 
+(devia ser assim "app.set('views', path.join(__dirname, './MVC/views'));" e não "app.set('views', path.join(__dirname, 'C:\\Users\\49808006884\\Documents\\MADMAX3\\MVC\\views'));")
+
+
+o código está começando do -> public <- e não do MADMAX3 (não perca 1 dia de trabalho de novo)
+|--------------- OBJETIVOS ----------------|
+
+1° colocar o css de volta
+
+2° terminar uma das telas
+
+3° fazer o back end da tela
+
+4° não estrangular alguém 
+
+5° repitir até você virar o psicólogo

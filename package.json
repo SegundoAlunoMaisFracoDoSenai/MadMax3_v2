@@ -1,0 +1,24 @@
+{
+    "name": "madmax3",
+    "version": "1.0.0",
+    "main": "app.js",
+    "scripts": {
+        "start": "npx nodemon app.js"
+    },
+    "author": "Eu",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "body-parser": "^1.20.2",
+        "consign": "^0.1.6",
+        "crypto": "^1.0.1",
+        "ejs": "^3.1.10",
+        "express": "^4.19.2",
+        "express-session": "^1.18.0",
+        "fs": "^0.0.1-security",
+        "multer": "^1.4.5-lts.1",
+        "mysql2": "^3.9.7",
+        "nodemon": "^3.1.0",
+        "path": "^0.12.7"
+    }
+}

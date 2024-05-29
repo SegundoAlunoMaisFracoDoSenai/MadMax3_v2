@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca de Plantas</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+#search-bar {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#results-container {
+    width: 100%;
+    max-width: 600px;
+    max-height: 400px;
+    overflow-y: auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+#results {
+    padding: 10px;
+}
+
+.plant {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.highlight {
+    color: red;
+    font-weight: bold;
+}
+
+.plant button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Buscar plantas..." oninput="searchPlant()">
+        <button onclick="searchPlant()">Buscar</button>
+    </div>
+    <div id="results-container" class="hidden">
+        <div id="results"></div>
+    </div>
+    <script>
+const plants = [
+    { name: 'Rosa', description: 'Uma flor bonita e perfumada.' },
+    { name: 'Girassol', description: 'Conhecida por seguir a direção do sol.' },
+    { name: 'Tulipa', description: 'Uma planta bulbosa com flores coloridas.' },
+    { name: 'Orquídea', description: 'Plantas exóticas e elegantes.' },
+    { name: 'Margarida', description: 'Flor simples e muito popular em jardins.' }
+];
+
+function searchPlant() {
+    const query = document.getElementById('search-bar').value.toLowerCase();
+    const resultsContainer = document.getElementById('results-container');
+    const results = document.getElementById('results');
+    results.innerHTML = '';
+
+    if (query.trim() === '') {
+        resultsContainer.classList.add('hidden');
+        return;
+    }
+
+    const filteredPlants = plants.filter(plant => plant.name.toLowerCase().includes(query));
+    
+    if (filteredPlants.length > 0) {
+        resultsContainer.classList.remove('hidden');
+        filteredPlants.forEach(plant => {
+            const plantElement = document.createElement('div');
+            plantElement.className = 'plant';
+
+            const highlightedName = highlightText(plant.name, query);
+            const description = plant.description;
+
+            plantElement.innerHTML = `
+                <h3>${highlightedName}</h3>
+                <p>${description}</p>
+                <button onclick="showMoreInfo('${plant.name}')">Mais informações</button>
+            `;
+            results.appendChild(plantElement);
+        });
+    } else {
+        results.innerHTML = '<p>Nenhuma planta encontrada.</p>';
+        resultsContainer.classList.remove('hidden');
+    }
+}
+
+function highlightText(text, query) {
+    if (!query) return text;
+
+    const regex = new RegExp(`(${query})`, 'gi');
+    return text.replace(regex, '<span class="highlight">$1</span>');
+}
+
+function showMoreInfo(plantName) {
+    alert(`Mais informações sobre ${plantName}`);
+}
+
+    </script>
+</body>
+</html>

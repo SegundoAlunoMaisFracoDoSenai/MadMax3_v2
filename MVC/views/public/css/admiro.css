@@ -1,0 +1,101 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.AdmiroNome {
+    color: #48752C;
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lineAdmiro {
+    background-color: #48752C;
+    height: 5px;
+    width: 1500px;
+}
+
+.buttonAdmiro:hover {
+    background-color: #48752C;
+    color: #D9D9D9;
+}
+
+.buttonAdmiro {
+    margin: 20px;
+    border: none;
+    border-radius: 15px;
+    width: 300px;
+    height: 100px;
+    font-size: 30px;
+    transition: 0.5s ease;
+    background-color: #D9D9D9;
+    color: #48752C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.buttonsAdmiro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+.addPlanta {
+    width: 90vw;
+}
+
+.containercards{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: center;
+    width: 98vw;
+}
+.cardsdecorador{
+    margin: 20px;
+}
+.form-container {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+.form-group input[type="text"], 
+.form-group input[type="number"], 
+.form-group input[type="file"],
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+.form-group button {
+    padding: 10px 20px;
+    background-color: #48752C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+.form-group button:hover {
+    background-color: #2a4419;
+    transform: 0.3s;
+}
